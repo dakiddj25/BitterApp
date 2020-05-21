@@ -1,7 +1,7 @@
 DROP DATABASE IF EXISTS bitter_db;
 CREATE DATABASE bitter_db;
 
-\c bitter_db;
+-- \c bitter_db;
 
 -- //users, posts, like, comment
 
