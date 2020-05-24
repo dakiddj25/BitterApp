@@ -18,7 +18,7 @@ CREATE TABLE users(
     userName TEXT NOT NULL UNIQUE,
     password VARCHAR, 
     email VARCHAR,
-    user_pic VARCHAR
+    user_pic VARCHAR 
 );
 
 CREATE TABLE posts(
