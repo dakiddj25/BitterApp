@@ -1,0 +1,18 @@
+body{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.explore {
+    border: 1.5px solid #90bade;
+    /* flex-wrap: wrap; */
+    float: left;
+    width: 40%;
+    margin-left: 10%;
+}
+
+ul {
+    list-style-type: none;
+}

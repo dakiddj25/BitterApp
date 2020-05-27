@@ -86,7 +86,7 @@ const createUser = async (req, res, next) => {
         res.status(200).json({
             user,
             status: "success",
-            message: "added user posts"
+            message: "added New User"
         })
     } catch (err){
         res.status(400).json({
