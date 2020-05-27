@@ -1,17 +1,14 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useHistory} from 'react-router-dom'
-import { apiURL } from '../util/apiURL'
 
-    const SignUp = () =>{
-    const [firstName, setFirstName] = useState("")
-    const [lastName, setLastName] = useState("")
+
+    const Login = () =>{
     const [email, setEmail] = useState("")
     const [userName, setUserName] = useState("")
     const [password, setPassword] = useState("")
-    const [userPic, setUserPic] = useState("")
     const history = useHistory();
-    const API = apiURL()
+   
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -30,17 +27,10 @@ import { apiURL } from '../util/apiURL'
 
     return(
         <>
-        <img src = "https://abs.twimg.com/sticky/illustrations/twitter_login_sidebar_illustration.png"></img>
+        <img></img>
         <h3>See what's happening in the world right now!</h3>
 
         <form onSubmit = {handleSubmit}>
-            <input id = 'firstName' placeholder = 'First Name' value = {firstName} onChange = {(e) => {
-                setFirstName(e.currentTarget.value)
-            }} />
-
-            <input id = 'lastName' placeholder = 'Last Name' value = {lastName} onChange = {(e) => {
-                setLastName(e.currentTarget.value)
-            }}/>
 
             <input id = 'email' placeholder = 'Email' value = {email} onChange = {(e) => {
                 setEmail(e.currentTarget.value)
@@ -53,18 +43,16 @@ import { apiURL } from '../util/apiURL'
             <input id = 'password' placeholder = 'Password' type = "password"  value = {password} onChange = {(e) => {
                 setPassword(e.currentTarget.value)}} autoComplete = "on" />
 
-            <input id = 'user_pic' placeholder = 'profilepic' value = {userPic} onChange = {(e) => {
-                setUserPic(e.currentTarget.value)
-            }}/>
+          
 
-            <button>signUp</button>
+            <button>Login</button>
         </form>
 
         <p> or </p>
-        <button>Login</button>
+        <button>sign up</button>
         </>
     )
 
 }
 
-export default SignUp
+export default Login

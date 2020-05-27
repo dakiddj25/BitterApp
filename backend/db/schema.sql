@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS bitter_db;
-CREATE DATABASE bitter_db;
+-- DROP DATABASE IF EXISTS bitter_db;
+-- CREATE DATABASE bitter_db;
 
 -- \c bitter_db;
 
