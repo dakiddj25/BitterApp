@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useHistory} from 'react-router-dom'
+import { login } from '../util/firebaseFunctions'
 
 
     const Login = () =>{
@@ -14,6 +15,7 @@ import { useHistory} from 'react-router-dom'
         e.preventDefault();
 
         try {
+            await login(email, password)
             //send results to backend
             history.push("/tweet")
 
@@ -36,9 +38,9 @@ import { useHistory} from 'react-router-dom'
                 setEmail(e.currentTarget.value)
             }}/>
 
-            <input id = 'userName' placeholder = 'Username' value = {userName} onChange = {(e) => {
+            {/* <input id = 'userName' placeholder = 'Username' value = {userName} onChange = {(e) => {
                 setUserName(e.currentTarget.value)
-            }}/>
+            }}/> */}
 
             <input id = 'password' placeholder = 'Password' type = "password"  value = {password} onChange = {(e) => {
                 setPassword(e.currentTarget.value)}} autoComplete = "on" />
@@ -49,7 +51,7 @@ import { useHistory} from 'react-router-dom'
         </form>
 
         <p> or </p>
-        <button>sign up</button>
+        <button onClick = {()=> history.push('/')}>sign up</button>
         </>
     )
 

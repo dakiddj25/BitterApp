@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import { useHistory} from 'react-router-dom'
 import { apiURL } from '../util/apiURL'
+import { signup } from '../util/firebaseFunctions'
+import axios from 'axios'
 
     const SignUp = () =>{
     const [firstName, setFirstName] = useState("")
@@ -17,6 +18,16 @@ import { apiURL } from '../util/apiURL'
         e.preventDefault();
 
         try {
+            let res = await signup(email, password);
+            debugger
+            await axios.post(`${API}/users`, {
+                firstName: firstName,
+                lastName: lastName,
+                userName: userName,
+                password: password,
+                email: email,
+                user_pic: userPic
+            })
             //send results to backend
             history.push("/tweet")
 
@@ -25,6 +36,7 @@ import { apiURL } from '../util/apiURL'
             console.log(err)
         }
     }
+
 
 
 
@@ -61,7 +73,7 @@ import { apiURL } from '../util/apiURL'
         </form>
 
         <p> or </p>
-        <button>Login</button>
+        <button onClick = {() =>{ history.push("/login")}}>Login</button>
         </>
     )
 

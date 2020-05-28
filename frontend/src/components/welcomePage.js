@@ -3,11 +3,15 @@ import ExplorePage from './explore'
 import SignUp from './signUp'
 import Feedindex from '../functions/Feedindex'
 import  '../css/welcomePage.css'
+import NavBar from './NavBar'
+
 
 const welcomePage = () => {
+  
     return (
-        
-        <div className = "welcomePage">
+      <>
+      <NavBar/>
+      <div className = "welcomePage">
           <div className = "explore">
             <ExplorePage/>
             <Feedindex/>
@@ -19,7 +23,7 @@ const welcomePage = () => {
 
         
         </div>
-        
+        </>
     )
 }
 
