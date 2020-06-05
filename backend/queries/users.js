@@ -1,5 +1,7 @@
 const db = require('../db/index');
 
+
+
 const getSingleUser = async (req, res, next) => {
     try {
         let userId = req.params.id;
@@ -98,4 +100,26 @@ const createUser = async (req, res, next) => {
     }
 }
 
-module.exports = {getSingleUser, logIn, deleteUser, editUser, createUser}
+
+const getUserByEmail = async (req, res, next) => {
+    try{
+        let userEmail = req.params.email;
+        let user = await db.one(
+            `SELECT id FROM users WHERE email = '${userEmail}'`
+            );
+            res.status(200).json({ 
+                status: "success",
+                message: "USER Found!",
+                payload: user
+            })
+    } catch (err){
+        res.status(400).json({
+            status: "Error",
+            message: "Username or Password does not exist",
+            payload: err
+        })
+        next(err);
+    }
+}
+
+module.exports = {getSingleUser, logIn, deleteUser, editUser, createUser, getUserByEmail}

@@ -2,7 +2,7 @@ const db = require('./../db')
 
 const getPosts = async (req, res, next) => {
     try {
-        let posts = await db.any("SELECT * FROM posts ORDER BY id DESC");
+        let posts = await db.any("SELECT  USERs.id AS UsersId, USERs.username, USER_pic, posts.id AS postID, posts.tweet FROM posts INNER JOIN users ON posts.user_id = users.id ORDER BY posts.id DESC ");
         res.status(200).json({
             status: "success",
             message: "all users posts",
@@ -17,7 +17,6 @@ const getPosts = async (req, res, next) => {
         next()
     }
 }
-
 const getUsersPosts = async (req, res, next) => {
     try{
         let posts = await db.any("SELECT * FROM posts WHERE user_id=$1 ORDER BY id DESC", req.params.id);

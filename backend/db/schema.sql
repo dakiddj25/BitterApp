@@ -82,7 +82,7 @@ VALUES (1, 'Kids donâ€™t ever play outside no more than 10 min talking about itâ
         (6, 'Trigger fingers turn to twitter fingers! Whoever likes this posts gives $1000!!');
 
 INSERT INTO likes (post_id, user_id)
-VALUES(1,2),
+VALUES  (1,2),
         (1,3),
         (6,4),
         (6,3),
@@ -90,7 +90,7 @@ VALUES(1,2),
         (6,5);
 
 INSERT INTO comments (post_id, user_id, comment)
-VALUES(1,2, 'What are you talking about?'),
+VALUES  (1,2, 'What are you talking about?'),
         (1,3, 'HUH?'),
         (2,6, 'You mad or nah?'),
         (3,6, 'Are you Dum, Stupid, or Dum'),
@@ -102,6 +102,14 @@ VALUES( 1, '#summer19'),
 ( 2, '#nocorona'),
 ( 3, '#summertimefine'),
 ( 4, '#loveyourself'),
-( 5, '#livelove');
+( 5, '#explore'),
+( 6, '#explore'),
+( 9, '#explore'),
+( 10, '#explore'),
+( 11, '#explore'),
+( 16, '#explore'),
+( 18, '#explore'),
+( 20, '#explore'),
+( 22, '#explore');
 
         

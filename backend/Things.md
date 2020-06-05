@@ -25,3 +25,8 @@ Heroku is not working for some reason
 The AuthRoutes do not seem to be working
 How can I make only the middle componet change on the tweet page
 For the Explore page should i create an new table to hold explore post or should i add a new categorie on my post table, and name it categories and have the explore table post be a qurey that search by that category
+
+
+I figured out my Explore table situation!
+When i post the page do not reload.
+How can i switch between componets? I tried using an extra session storage and it would change the value but that was it.
