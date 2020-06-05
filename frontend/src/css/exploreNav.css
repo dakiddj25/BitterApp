@@ -2,12 +2,17 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: auto;
     background-color: rgb(255, 255, 255);
+    white-space: nowrap;
   }
   
 .exploreNav li {
-    float: left;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
   }
   
 .exploreNav  li a {
@@ -29,7 +34,7 @@
   position: fixed; 
   z-index: 1; 
   top: 25px; 
-  left: 0;
+  /* left: 0; */
   background-color: rgb(247, 241, 241);
   overflow-x: hidden; 
   padding-top: 20px;

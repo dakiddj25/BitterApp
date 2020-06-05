@@ -1,23 +1,17 @@
 import React from 'react'
-import { logout } from '../util/firebaseFunctions'
-import SideNav from '../functions/tweetNav'
-import Feedindex from '../functions/Feedindex'
+import SideNav from '../functions/sideNav'
+import AllPost from './AllPost'
 
 
 const TweetPage = () => {
 
-
     return (
         <>
-        <h1>Consists of 3 components</h1>
-        <p>Side Nav</p>
+        <h1>Tweet Page</h1>
         <SideNav/>
-        <p>Posts</p>
             <div className = 'feedin'>
-                <Feedindex/>
+                <AllPost/>   
             </div>
-        <p>explore Posts</p>
-        <button onClick = {logout}>Log out</button>
         </>
     )
 }

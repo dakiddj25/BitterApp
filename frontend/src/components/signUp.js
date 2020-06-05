@@ -18,7 +18,7 @@ import axios from 'axios'
         e.preventDefault();
 
         try {
-            let res = await signup(email, password);
+             await signup(email, password);
             debugger
             await axios.post(`${API}/users`, {
                 firstName: firstName,
@@ -29,7 +29,7 @@ import axios from 'axios'
                 user_pic: userPic
             })
             //send results to backend
-            history.push("/tweet")
+            history.push("/loggedin/tweet")
 
         }
         catch (err){
@@ -62,7 +62,7 @@ import axios from 'axios'
                 setUserName(e.currentTarget.value)
             }}/>
 
-            <input id = 'password' placeholder = 'Password' type = "password"  value = {password} onChange = {(e) => {
+            <input required id = 'password' placeholder = 'Password' type = "password"  value = {password} onChange = {(e) => {
                 setPassword(e.currentTarget.value)}} autoComplete = "on" />
 
             <input id = 'user_pic' placeholder = 'profilepic' value = {userPic} onChange = {(e) => {

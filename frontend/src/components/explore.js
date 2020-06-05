@@ -1,21 +1,51 @@
-import React from "react"
+import React, { useState, useEffect }from "react"
 import ExploreNav from '../functions/explorerNav'
+import axios from 'axios'
+import { apiURL} from '../util/apiURL'
+import Feedindex from '../functions/Feedindex'
 
-const explore =()=>{
 
-    // it should be fecthing the data from the explore table
+
+const Explore =()=>{
+    // it should be fecthing the data from the explore hashtags
+    const [posts, setPosts ] = useState([])
+    
+
+    useEffect(() => {
+        const API = apiURL();
+        const fetchPosts = async () => {
+            try{
+                let res = await axios.post(`${API}/hashtag/getHashtag`, {hashtag: "summer"})
+                // debugger
+                let postArr = res.data.payload
+                if(postArr.length === 0 ){
+                    setPosts([{
+                        tweet: "No Results Found"
+                    }])
+                } else{
+                    setPosts(res.data.payload)
+                }
+                
+            }catch(err){
+                console.log(err)
+                setPosts([])
+            }
+        }
+        fetchPosts();
+    },[])
+
+
 
     return(
-        <div>
+        <div >
             <h1>Explore</h1>
             {/* <h4>Explore Nav</h4> */}
             <ExploreNav/>
-            {/* <p>Big HeadLine</p> */}
-            {/* <p>Ul with all the post on the explore page</p> */}
-            {/* <p> the Explore nav will just change the post based on search related Hashtags basedto the title</p> */}
+            <Feedindex posts={posts} />
+           
         </div>
     )
 
 }
 
-export default explore;
+export default Explore;

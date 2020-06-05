@@ -1,14 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import axios from 'axios'
 import { useHistory} from 'react-router-dom'
 import { login } from '../util/firebaseFunctions'
+import { apiURL} from '../util/apiURL'
+import { AuthContext } from '../provider/AuthContext'
 
 
     const Login = () =>{
     const [email, setEmail] = useState("")
-    const [userName, setUserName] = useState("")
+    // const [userName, setUserName] = useState("")
     const [password, setPassword] = useState("")
     const history = useHistory();
+    const { currentUser } = useContext(AuthContext);
+    const API = apiURL();
    
 
     const handleSubmit = async (e) => {
@@ -16,14 +20,18 @@ import { login } from '../util/firebaseFunctions'
 
         try {
             await login(email, password)
-            //send results to backend
-            history.push("/tweet")
+            let userid = await axios.get(`${API}/users/email/${currentUser.email}`)
+            localStorage.setItem("currentUserID", userid.data.payload.id)
+            //save id 
+            history.push("/loggedin/tweet")
 
         }
         catch (err){
             console.log(err)
         }
     }
+
+  
 
 
 

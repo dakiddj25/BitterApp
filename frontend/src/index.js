@@ -1,21 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import store from './store/store'
+// import store from './store/store'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from "react-router-dom";
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <Provider store = { store }>
+  // <Provider store = { store }>
     <Router>
         <React.StrictMode>
           <App />
         </React.StrictMode>
     </Router>
     
-  </Provider>
+  // </Provider>
   ,
   document.getElementById('root')
 );

@@ -3,6 +3,7 @@ body{
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    justify-content: space-evenly;
 }
 
 .explore {
@@ -10,6 +11,7 @@ body{
     /* flex-wrap: wrap; */
     float: left;
     width: 40%;
+    height: 100vh;
     margin-left: 10%;
 }
 
@@ -21,6 +23,5 @@ ul {
     height: 100%;
     width: 35%;
     margin-left: 30%;
-    
-
 }
+

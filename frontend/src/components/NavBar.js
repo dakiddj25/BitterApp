@@ -5,7 +5,8 @@ import "../css/NavBar.css";
 const NavBar = () => {
     return(
         <nav>
-            <NavLink className="links" exact to={"/"}>Home(Logo)</NavLink>
+            <NavLink className="links" exact to={"/"}> Home(Logo)</NavLink>
+            
             <input placeholder='Search Bitter' />
             <button>
                 <NavLink to={"/login"}>login</NavLink>

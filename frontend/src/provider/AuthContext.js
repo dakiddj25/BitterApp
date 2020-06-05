@@ -11,7 +11,7 @@ const AuthProvider = ({children}) => {
 
     const updateUser = (user) => {
         if(user){
-            const {email, userName} =user;
+            const {email, userName} = user;
             const lastLogin = user.metadata.lastLogin
             setCurrentUser({email, lastLogin, username: userName});
             getfirebaseIdToken().then(token => {
@@ -31,7 +31,7 @@ const AuthProvider = ({children}) => {
 
     if(loading) return <div>Loading...</div>
     return (
-        <AuthContext.Provider value ={currentUser, token}>
+        <AuthContext.Provider value ={{currentUser, token}}>
             {children}
         </AuthContext.Provider>
     )

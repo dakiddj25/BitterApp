@@ -1,7 +1,7 @@
 import React from 'react'
 import ExplorePage from './explore'
 import SignUp from './signUp'
-import Feedindex from '../functions/Feedindex'
+// import Feedindex from '../functions/Feedindex'
 import  '../css/welcomePage.css'
 import NavBar from './NavBar'
 
@@ -14,7 +14,7 @@ const welcomePage = () => {
       <div className = "welcomePage">
           <div className = "explore">
             <ExplorePage/>
-            <Feedindex/>
+            {/* <Feedindex/> */}
           </div>
 
           <div className = "signUp">
