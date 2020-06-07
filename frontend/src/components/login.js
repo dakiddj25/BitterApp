@@ -37,7 +37,7 @@ import { AuthContext } from '../provider/AuthContext'
 
     return(
         <>
-        <img></img>
+        <img src='https://abs.twimg.com/sticky/illustrations/twitter_login_sidebar_illustration.png' />
         <h3>See what's happening in the world right now!</h3>
 
         <form onSubmit = {handleSubmit}>

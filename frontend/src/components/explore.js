@@ -16,8 +16,9 @@ const Explore =()=>{
     }
 
     const API = apiURL();
-    const fetchPosts = async (hashtagString) => {
+    const fetchPosts = async (hashtagString = "explore") => {
         try{
+            // debugger
             let res = await axios.post(`${API}/hashtag/getHashtag`, {hashtag: hashtagString})
             // debugger
             let postArr = res.data.payload

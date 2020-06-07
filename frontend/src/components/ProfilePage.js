@@ -9,8 +9,6 @@ import { apiURL} from '../util/apiURL'
 
 
 const ProfilePage = () => {
-    const [posts, setPosts] = useState([]);
-    const API = apiURL()
     // const { currentUser } = useContext(AuthContext);
 
     return (
@@ -19,7 +17,7 @@ const ProfilePage = () => {
 
                 <CreatePost/>
             <div className = 'feedin'>
-                <ProfileIndex post={posts} />
+                <ProfileIndex />
             </div>
         </>
     )

@@ -7,7 +7,7 @@ import Login from './components/login';
 import AuthProvider from './provider/AuthContext';
 import { AuthRoute, ProtectedRoute } from './util/routesUtil'
 import LoggedInView from './components/LoggedInView'
-
+import { logout } from './util/firebaseFunctions'
 
 function App() {
   return (
@@ -18,6 +18,10 @@ function App() {
         
           <AuthRoute exact path={"/"} >
           <Home/>
+          </AuthRoute>
+
+          <AuthRoute exact path={"/loggedout"} >
+          {logout}
           </AuthRoute>
 
           <ProtectedRoute path={'/loggedin'} >

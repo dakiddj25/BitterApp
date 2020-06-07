@@ -1,21 +1,23 @@
 import React from 'react'
 import SideNav from '../functions/sideNav'
 import AllPost from './AllPost'
+import "../css/welcomePage.css"
 
 
 const TweetPage = () => {
 
     return (
-        <>
-        <h1>Tweet Page</h1>
+        <div className = 'body'>
+        
         {/* <SideNav/> */}
             <div className = 'feedin'>
+            <h1>Welcome To Bitter!!</h1>
                 <AllPost/>   
             </div>
-            {/* <div className="three">
+            <div className="three">
                 <h1>3rd Componet</h1>
-            </div> */}
-        </>
+            </div>
+        </div>
     )
 }
 

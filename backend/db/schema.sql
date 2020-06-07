@@ -109,7 +109,7 @@ VALUES( 1, '#summer19'),
 ( 11, '#explore'),
 ( 16, '#explore'),
 ( 18, '#explore'),
-( 20, '#explore'),
-( 22, '#explore');
+( 20, '#explore');
+
 
         

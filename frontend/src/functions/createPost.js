@@ -3,11 +3,11 @@ import axios from 'axios';
 import { apiURL} from '../util/apiURL'
 
 
-const CreatePost = ({fetchUsersFeed, getPosts, updatePosts}) => {
+const CreatePost = () => {
     const [tweet, setTweet] = useState("")
     // const [picture, setPicture] = useState("");
     const user_id= localStorage.getItem("currentUserID")
-    console.log(user_id)
+    // console.log(user_id)
     const API = apiURL()
     
   
@@ -19,11 +19,8 @@ const CreatePost = ({fetchUsersFeed, getPosts, updatePosts}) => {
                 tweet: tweet
         })
         let postID = res.data.payload.id
-        setTweet("");
-        updatePosts();
-
         debugger
-        let arrCaption = (tweet.value.split(' '));
+        let arrCaption = (tweet.split(' '));
         getHashtag(arrCaption, postID)
         
         }catch(err){

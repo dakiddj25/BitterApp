@@ -13,7 +13,7 @@ import axios from 'axios'
     const [userPic, setUserPic] = useState("")
     const history = useHistory();
     const API = apiURL()
-    const CLOUDIANRY_URL = "https://api.cloudinary.com/v1_1/jones123";
+    const CLOUDIANRY_URL = "https://api.cloudinary.com/v1_1/jones123/image/upload";
     const CLOUDIANRY_UPLOAD_PRESET = "n4oxudu9";
 
 
@@ -29,7 +29,8 @@ import axios from 'axios'
                 userName: userName,
                 password: password,
                 email: email,
-                user_pic: "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
+                user_pic: userPic,
+                // user_pic: "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
             })
             //send results to backend
             history.push("/loggedin/tweet")
@@ -83,7 +84,7 @@ import axios from 'axios'
             <input required id = 'password' placeholder = 'Password' type = "password"  value = {password} onChange = {(e) => {
                 setPassword(e.currentTarget.value)}} autoComplete = "on" />
 
-            {/* <input id='userPic' type="file" onChange={uploadPicture}/> */}
+            <input id='userPic' type="file" onChange={uploadPicture}/>
             
 
             <button>signUp</button>

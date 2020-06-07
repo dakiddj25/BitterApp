@@ -11,12 +11,18 @@ export default function FeedIndex({posts}){
                 {posts.map(user => {
                     {/* debugger */}
 
-                   return <div key = {user.postid} className = 'tweet'>
-                                <div className = 'tweetHead'>
-                                    <h3>{user.username}</h3>
-                                    <img src = {user.user_pic}/>
+                   return <div key = {user.postid} className = 'card-container'>
+                                <div className = 'upper-container'>
+                                    <div className = 'image-container'>
+                                        <img src = {user.user_pic}/>
+                                    </div>
                                 </div>
+
+                                <div className = 'lower-container'>
+                                    <h2>{user.username}</h2>
+                            
                             <p>{user.tweet}</p>
+                                </div>
                         </div>
                     {/* return <li className = 'tweet' key= {user.postid}> {user.tweet}</li> */}
                 })}

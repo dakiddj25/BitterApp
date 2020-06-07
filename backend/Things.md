@@ -30,3 +30,5 @@ For the Explore page should i create an new table to hold explore post or should
 I figured out my Explore table situation!
 When i post the page do not reload.
 How can i switch between componets? I tried using an extra session storage and it would change the value but that was it.
+
+	
