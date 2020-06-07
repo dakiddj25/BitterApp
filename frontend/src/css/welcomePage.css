@@ -8,10 +8,10 @@ body{
 
 .explore {
     border: 1.5px solid #90bade;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     float: left;
     width: 40%;
-    height: 100vh;
+    height: 100%;
     margin-left: 10%;
 }
 
@@ -24,4 +24,9 @@ ul {
     width: 35%;
     margin-left: 30%;
 }
+
+.three{
+    margin-left: 60%;
+}
+
 

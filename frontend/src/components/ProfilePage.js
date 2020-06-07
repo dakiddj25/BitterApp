@@ -1,12 +1,17 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { logout } from '../util/firebaseFunctions'
 import ProfileIndex from '../functions/profileIndex'
 import  CreatePost from '../functions/createPost'
+import axios from "axios";
+import { apiURL} from '../util/apiURL'
+
 
 
 
 const ProfilePage = () => {
-   
+    const [posts, setPosts] = useState([]);
+    const API = apiURL()
+    // const { currentUser } = useContext(AuthContext);
 
     return (
         <>
@@ -14,9 +19,8 @@ const ProfilePage = () => {
 
                 <CreatePost/>
             <div className = 'feedin'>
-                <ProfileIndex />
+                <ProfileIndex post={posts} />
             </div>
-        <button onClick = {logout}>Log out</button>
         </>
     )
 }

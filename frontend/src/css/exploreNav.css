@@ -32,20 +32,23 @@
   height: 100%; 
   width: 25%; 
   position: fixed; 
-  z-index: 1; 
+  /* z-index: 1; 
   top: 25px; 
-  /* left: 0; */
+  left: 0; */
   background-color: rgb(247, 241, 241);
-  overflow-x: hidden; 
-  padding-top: 20px;
+  /* overflow-x: hidden; 
+  padding-top: 20px; */
 }
 
+.sidenav img{
+  height: 100px;
+}
 
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
-  color: rgb(28,161,242);
+  color: rgb(248,213,62);
   display: block;
 }
 

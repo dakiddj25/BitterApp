@@ -7,7 +7,7 @@ export default function FeedIndex({posts}){
     return (
         <div >
             <h1>Bitter Posts</h1>
-            <ul>
+            
                 {posts.map(user => {
                     {/* debugger */}
 
@@ -21,7 +21,7 @@ export default function FeedIndex({posts}){
                     {/* return <li className = 'tweet' key= {user.postid}> {user.tweet}</li> */}
                 })}
                 {/* <h3>{posts.firstname}</h3> */}
-            </ul>
+            
         </div>
     )
 }

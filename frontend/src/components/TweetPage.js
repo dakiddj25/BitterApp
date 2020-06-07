@@ -8,10 +8,13 @@ const TweetPage = () => {
     return (
         <>
         <h1>Tweet Page</h1>
-        <SideNav/>
+        {/* <SideNav/> */}
             <div className = 'feedin'>
                 <AllPost/>   
             </div>
+            {/* <div className="three">
+                <h1>3rd Componet</h1>
+            </div> */}
         </>
     )
 }

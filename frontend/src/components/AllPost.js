@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react"
 import Feedindex from '../functions/Feedindex'
+import  CreatePost from '../functions/createPost'
 import { apiURL} from '../util/apiURL'
 import axios from 'axios'
 
@@ -22,7 +23,7 @@ const AllPost =()=>{
 
     return(
         <div>
-            
+            <CreatePost/>
            <Feedindex posts={posts} />
          </div>
     )

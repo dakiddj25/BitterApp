@@ -1,5 +1,4 @@
 import React from 'react';
-// import './App.css';
 import { Route, Switch } from "react-router-dom";
 import Home from './components/welcomePage'
 import Profile from './components/ProfilePage'
@@ -12,7 +11,7 @@ import LoggedInView from './components/LoggedInView'
 
 function App() {
   return (
-    <div className="App">
+    <div className="body">
     <AuthProvider>
        
         <Switch>
@@ -25,13 +24,6 @@ function App() {
             <LoggedInView/>
           </ProtectedRoute>
 
-          {/* <ProtectedRoute path={"/tweet"} >
-            <TweetPage/>
-          </ProtectedRoute>
-
-          <ProtectedRoute path={"/profile"} >
-            <Profile/>
-          </ProtectedRoute> */}
 
           <Route path={"/login"} component={Login}/>
           <Route component={Error} />

@@ -7,6 +7,7 @@ const TweetNav = () => {
 
     return (
     <div className="sidenav">
+        <img src= 'https://dejpknyizje2n.cloudfront.net/marketplace/products/geometric-bee-logo-sticker-1561735738.2410054.png' />
         <Link to= '/loggedin/tweet'>HOME</Link>
         <Link to= '/loggedin/Explore'>EXPLORE</Link>
         <Link to= '/loggedin/Profile'>PROFILE</Link>

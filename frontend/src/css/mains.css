@@ -1,0 +1,16 @@
+body{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.trys{
+    margin-left: 25%;
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* .trys2{
+  margin-left: 500px;
+} */
