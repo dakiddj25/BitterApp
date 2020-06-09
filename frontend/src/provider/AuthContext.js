@@ -11,7 +11,7 @@ const AuthProvider = ({children}) => {
 
     const updateUser = (user) => {
         if(user){
-            const {email} = user;
+            const {email,} = user;
             const lastLogin = user.metadata.lastLogin
             setCurrentUser({email, lastLogin});
             getfirebaseIdToken().then(token => {

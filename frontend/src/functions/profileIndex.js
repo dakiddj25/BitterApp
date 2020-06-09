@@ -1,26 +1,10 @@
 import React,{ useState, useEffect,useContext } from "react";
-import axios from "axios";
-import { apiURL} from '../util/apiURL'
+import { FaHeart } from 'react-icons/fa';
+import { FaCommentAlt } from 'react-icons/fa';
 // import { AuthContext } from '../provider/AuthContext'
 
-export default function UserIndex(){
+export default function UserIndex({posts}){
 //   debugger
-    const [posts, setPosts] = useState([]);
-    const API = apiURL();
-
-useEffect(() => {
-        
-    const fetchPosts = async () => {
-        let user_id = localStorage.getItem("currentUserID");
-        
-        let res = await axios.get(`${API}/posts/${user_id}`)
-        // console.log(res)
-        
-        setPosts(res.data.payload);
-    }
-    fetchPosts();
-    
-}, []);
 
     return (
         <>
@@ -36,8 +20,12 @@ useEffect(() => {
 
                                 <div className = 'lower-container'>
                                     <h2>{user.username}</h2>
-                            
-                            <p>{user.tweet}</p>
+                                    <p>{user.tweet}</p>
+                                        <div className = 'likeCommentRepost'>
+                                            <FaHeart icon = 'FaHeart'/>
+                                            <FaCommentAlt icon = 'FaCommentAlt'/>
+
+                                        </div>
                                 </div>
                         </div>
                     )

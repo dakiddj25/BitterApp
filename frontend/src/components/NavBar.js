@@ -9,7 +9,6 @@ const NavBar = () => {
             
             <input placeholder='Search Bitter' />
             <button>
-
                 <NavLink to={"/login"}>login</NavLink>
             </button>
             

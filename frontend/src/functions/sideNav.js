@@ -1,7 +1,8 @@
 import React from "react";
 import { logout } from '../util/firebaseFunctions'
 import { Link } from 'react-router-dom'
-import "../css/exploreNav.css";
+import "../css/NavBar.css";
+
 
 const TweetNav = () => {
 

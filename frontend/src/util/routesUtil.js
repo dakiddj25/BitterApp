@@ -9,7 +9,7 @@ export const AuthRoute = ({ children, ...rest}) => {
         <Route
         {...rest}
         render = {({location}) =>{
-            return !currentUser ? children : <Redirect to="/tweet" />
+            return !currentUser ? children : <Redirect to="/loggedin/tweet" />
         }}
         />
     )

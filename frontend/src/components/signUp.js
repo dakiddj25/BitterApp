@@ -33,7 +33,7 @@ import axios from 'axios'
                 // user_pic: "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
             })
             //send results to backend
-            history.push("/loggedin/tweet")
+            // history.push("/loggedin/tweet")
 
         }
         catch (err){
@@ -82,9 +82,9 @@ import axios from 'axios'
             }}/>
 
             <input required id = 'password' placeholder = 'Password' type = "password"  value = {password} onChange = {(e) => {
-                setPassword(e.currentTarget.value)}} autoComplete = "on" />
+                setPassword(e.currentTarget.value)}} />
 
-            <input id='userPic' type="file" onChange={uploadPicture}/>
+            <input id='userPic' type="file" onChange={uploadPicture} accept="image/png, image/jpeg"/>
             
 
             <button>signUp</button>

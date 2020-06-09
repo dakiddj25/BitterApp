@@ -44,8 +44,8 @@ const Explore =()=>{
 
 
     return(
-        <div  >
-            <h1>Explore</h1>
+        <div className = 'explorePage' >
+            <h1>Explore Bitter</h1>
             {/* <h4>Explore Nav</h4> */}
             <ExploreNav handleString={handleString}/>
             <Feedindex posts={posts} />

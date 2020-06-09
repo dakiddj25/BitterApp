@@ -7,16 +7,13 @@ import "../css/welcomePage.css"
 const TweetPage = () => {
 
     return (
-        <div className = 'body'>
+        <div >
         
-        {/* <SideNav/> */}
-            <div className = 'feedin'>
+            <div >
             <h1>Welcome To Bitter!!</h1>
                 <AllPost/>   
             </div>
-            <div className="three">
-                <h1>3rd Componet</h1>
-            </div>
+    
         </div>
     )
 }

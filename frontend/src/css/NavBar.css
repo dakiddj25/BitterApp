@@ -18,5 +18,68 @@ a:hover{
     height: 25px;
   }
 
+  .exploreNav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    background-color: rgb(255, 255, 255);
+    white-space: nowrap;
+  }
+  
+.exploreNav li {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  }
+  
+.exploreNav  li a {
+    display: block;
+    color: rgb(101,119,134);
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+ .exploreNav li a:hover {
+    background-color: rgb(28,161,242);
+  }
+
+  /* The sidebar tweetPage menu */
+.sidenav {
+  height: 100%; 
+  width: 200px; 
+  position: fixed;
+  z-index: 1; 
+  top: 25px; 
+  left: 0;
+  background-color: rgb(247, 241, 241);
+  overflow-x: hidden; 
+  padding-top: 20px;
+}
+
+.sidenav img{
+  height: 100px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: rgb(248,213,62);
+  display: block;
+}
+
+
+.sidenav a:hover {
+  color: rgb(10, 92, 143);
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
 
 

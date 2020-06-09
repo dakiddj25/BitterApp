@@ -7,6 +7,8 @@ import NavBar from './NavBar'
 
 
 const welcomePage = () => {
+
+  
   
     return (
       <>

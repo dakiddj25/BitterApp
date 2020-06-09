@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/exploreNav.css";
+import "../css/NavBar.css";
 
 
 const ExplorerNav = ({handleString}) => {

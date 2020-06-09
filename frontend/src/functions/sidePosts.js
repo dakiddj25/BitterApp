@@ -1,16 +1,13 @@
-import React from "react";
-// import axios from "axios";
-import '../css/tweets.css'
+import React,{ useState, useEffect,useContext } from "react";
 
-export default function FeedIndex({posts}){
+export default function sidePost({post}){
+
     return (
-        <div >
-            <h1></h1>
-            
-                {posts.map(user => {
-                    {/* debugger */}
-
-                   return <div key = {user.postid} className = 'card-container'>
+        <>
+            <h1>User's Posts</h1>
+                {post.map(user => {
+                    return (
+                        <div key = {user.postid} className = 'card-container'>
                                 <div className = 'upper-container'>
                                     <div className = 'image-container'>
                                         <img src = {user.user_pic}/>
@@ -23,10 +20,9 @@ export default function FeedIndex({posts}){
                             <p>{user.tweet}</p>
                                 </div>
                         </div>
-                    {/* return <li className = 'tweet' key= {user.postid}> {user.tweet}</li> */}
+                    )
                 })}
-                {/* <h3>{posts.firstname}</h3> */}
             
-        </div>
+        </>
     )
 }
