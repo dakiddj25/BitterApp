@@ -1,21 +1,30 @@
-import React, { useState, useEffect} from "react"
+import React, { useState, useEffect, useContext} from "react"
 import Feedindex from '../functions/Feedindex'
 import  CreatePost from '../functions/createPost'
 import { apiURL} from '../util/apiURL'
+import { AuthContext } from '../provider/AuthContext'
 import axios from 'axios'
 
 
-const AllPost =()=>{
+const AllPost =({showPosts})=>{
     const [posts, setPosts] = useState([]);
     const user_id= localStorage.getItem("currentUserID");
+    const { token } = useContext(AuthContext);
     const API = apiURL();
 
     const handlePostSubmit = async (e,tweet) => {
         e.preventDefault()
         try {
-            let res = await axios.post(`${API}/posts/`, {
+            let res = await axios({
+                method: "post",
+                url:`${API}/posts/`,
+                headers: {
+                    "AuthToken": token
+                },
+                data: {
                     user_id: user_id,
-                    tweet: tweet
+                    tweet: tweet,
+                } 
             })
             // debugger
             
@@ -63,7 +72,7 @@ const fetchPosts = async () => {
         <div>
             <CreatePost handlePostSubmit= {handlePostSubmit} />
             <div>
-           <Feedindex posts={posts} />
+           <Feedindex posts={posts}  showPost={showPosts}/>
             </div>
          </div>
     )

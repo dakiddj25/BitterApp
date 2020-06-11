@@ -14,10 +14,12 @@ const welcomePage = () => {
       <>
       <NavBar/>
       <div className = "welcomePage">
+        <div className = 'welcomeExplore'>
           <div className = "explore">
-            <ExplorePage/>
-            {/* <Feedindex/> */}
-          </div>
+              <ExplorePage/>
+            </div>
+        </div>
+         
 
           <div className = "signUp">
             <SignUp/>

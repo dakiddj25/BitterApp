@@ -1,26 +1,26 @@
 import React from "react";
-// import axios from "axios";
-import '../css/tweets.css'
+import { Show } from '../functions/sidePosts'
 
-export default function FeedIndex({posts}){
+
+export default function FeedIndex({posts, showPost}){
     return (
-        <div >
+        <div className= 'feeding'>
             <h1></h1>
             
-                {posts.map(user => {
+                {posts.map(post => {
                     {/* debugger */}
 
-                   return <div key = {user.postid} className = 'card-container'>
+                   return <div key = {post.postid} className = 'card-container'>
                                 <div className = 'upper-container'>
                                     <div className = 'image-container'>
-                                        <img src = {user.user_pic}/>
+                                        <img src = {post.user_pic}/>
                                     </div>
                                 </div>
 
                                 <div className = 'lower-container'>
-                                    <h2>{user.username}</h2>
+                                    <h2>{post.username}</h2>
                             
-                            <p>{user.tweet}</p>
+                            <p>{post.tweet}</p>
                                 </div>
                         </div>
                     {/* return <li className = 'tweet' key= {user.postid}> {user.tweet}</li> */}

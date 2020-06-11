@@ -5,32 +5,59 @@ import Tweet from '../components/TweetPage'
 import ProfilePage from '../components/ProfilePage'
 import Explore from '../components/explore'
 import '../css/mains.css'
+import SidePost from '../functions/sidePosts'
+
 
 const LoggedInView = () => {
+    const showPost = (post) => {
+        console.log(post)
+    }
+
+
+   
     return (
-        <div className = 'body'>
-        
-            <SideNav/>
-                
-            <Route path ="/loggedin/tweet">
-                <Tweet/>
-                
-            </Route>
+        <div className = 'warper'>
 
-            <Route path ="/loggedin/Profile">
-                <ProfilePage/>
-            <div className = 'explore'>
-                <Explore/>
+            <div className = 'comp1'>
+                <SideNav/>
             </div>
-
-            </Route>
-            <div className = "trys">
-                <Route path ="/loggedin/explore">
-                    <Explore/>
+            
+           
+             <div className = 'comp2'>
+                <Route path ="/loggedin/tweet">
+                    <Tweet showPost = {showPost}/>
                 </Route>
-                
-            </div>
-        </div>
+
+                    <Route path ="/loggedin/Profile">
+                        <ProfilePage/>
+                    </Route>
+
+
+                    <div className = "trys">
+                        <Route path ="/loggedin/explore">
+                            <Explore/>
+                        </Route>
+                    </div>
+                </div>
+
+                <div className = 'comp3'>
+                    <Route path ="/loggedin/Profile">
+                        <div className = 'explore'>
+                            <Explore/>
+                        </div>
+                    </Route>
+
+                    <Route path ="/loggedin/tweet">
+                        <SidePost/>
+                    </Route>
+                    
+                </div>
+
+
+             </div>
+        
+
+        
     )
 
 }

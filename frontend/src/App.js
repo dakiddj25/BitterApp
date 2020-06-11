@@ -11,7 +11,7 @@ import { logout } from './util/firebaseFunctions'
 
 function App() {
   return (
-    <div className="body">
+    <div className = 'body'>
     <AuthProvider>
        
         <Switch>

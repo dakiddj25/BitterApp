@@ -4,7 +4,7 @@ import ProfileIndex from '../functions/profileIndex'
 import  CreatePost from '../functions/createPost'
 import axios from "axios";
 import { apiURL} from '../util/apiURL'
-
+// import '../css/mains.css'
 
 
 

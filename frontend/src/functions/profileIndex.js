@@ -1,10 +1,12 @@
 import React,{ useState, useEffect,useContext } from "react";
 import { FaHeart } from 'react-icons/fa';
 import { FaCommentAlt } from 'react-icons/fa';
+import { GiDrippingHoney } from 'react-icons/gi';
 // import { AuthContext } from '../provider/AuthContext'
 
 export default function UserIndex({posts}){
 //   debugger
+  let num = 0;
 
     return (
         <>
@@ -22,9 +24,9 @@ export default function UserIndex({posts}){
                                     <h2>{user.username}</h2>
                                     <p>{user.tweet}</p>
                                         <div className = 'likeCommentRepost'>
-                                            <FaHeart icon = 'FaHeart'/>
-                                            <FaCommentAlt icon = 'FaCommentAlt'/>
-
+                                           <p>{num} <FaHeart icon = 'FaHeart' /></p> 
+                                          <p> <GiDrippingHoney icon = 'GiDrippingHoney'/></p>
+                                          <p> <FaCommentAlt icon = 'FaCommentAlt'/></p>
                                         </div>
                                 </div>
                         </div>
