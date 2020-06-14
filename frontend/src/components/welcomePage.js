@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ExplorePage from './explore'
 import SignUp from './signUp'
 // import Feedindex from '../functions/Feedindex'
@@ -6,17 +6,22 @@ import  '../css/welcomePage.css'
 import NavBar from './NavBar'
 
 
-const welcomePage = () => {
+const WelcomePage = () => {
+const [search, setSearch] = useState("")
 
+  const handleSearch = (e,searching) => {
+    e.preventDefault()
+    setSearch(searching)
+  }
   
-  
+ 
     return (
       <>
-      <NavBar/>
+      <NavBar handleSearch ={handleSearch}/>
       <div className = "welcomePage">
         <div className = 'welcomeExplore'>
           <div className = "explore">
-              <ExplorePage/>
+              <ExplorePage search = {search}/>
             </div>
         </div>
          
@@ -31,4 +36,4 @@ const welcomePage = () => {
     )
 }
 
-export default welcomePage;
+export default WelcomePage;

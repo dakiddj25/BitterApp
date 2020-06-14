@@ -17,7 +17,7 @@ const AllPost =({showPosts})=>{
         try {
             let res = await axios({
                 method: "post",
-                url:`${API}/posts/`,
+                url:`${API}/posts`,
                 headers: {
                     "AuthToken": token
                 },
@@ -68,11 +68,16 @@ const fetchPosts = async () => {
         fetchPosts();
     },[])
 
+
+    const showPost = (post) =>{
+        debugger
+    }
+
     return(
         <div>
             <CreatePost handlePostSubmit= {handlePostSubmit} />
             <div>
-           <Feedindex posts={posts}  showPost={showPosts}/>
+           <Feedindex posts={posts}  showPost={showPost} handlePostSubmit= {handlePostSubmit}/>
             </div>
          </div>
     )

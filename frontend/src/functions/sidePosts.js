@@ -4,7 +4,7 @@ import React,{ useState, useEffect,useContext } from "react";
 
 export default function sidePost(post){
 
-    post = 'comment here'
+    post = 'Comment here'
 
     return (
         <>

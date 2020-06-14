@@ -10,7 +10,7 @@ import axios from 'axios'
     const [email, setEmail] = useState("")
     const [userName, setUserName] = useState("")
     const [password, setPassword] = useState("")
-    const [userPic, setUserPic] = useState("")
+    const [userPic, setUserPic] = useState("https://www.dts.edu/wp-content/uploads/sites/6/2018/04/Blank-Profile-Picture.jpg")
     const history = useHistory();
     const API = apiURL()
     const CLOUDIANRY_URL = "https://api.cloudinary.com/v1_1/jones123/image/upload";
@@ -23,17 +23,17 @@ import axios from 'axios'
         try {
              await signup(email, password);
             debugger
-            await axios.post(`${API}/users`, {
+          let res =  await axios.post(`${API}/users`, {
                 firstName: firstName,
                 lastName: lastName,
                 userName: userName,
                 password: password,
                 email: email,
                 user_pic: userPic,
-                // user_pic: "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
             })
-            //send results to backend
-            // history.push("/loggedin/tweet")
+            localStorage.setItem("currentUserID", res.data.user.id)
+            //Save the ID in local Storage... Not using Firebase IDs
+           
 
         }
         catch (err){

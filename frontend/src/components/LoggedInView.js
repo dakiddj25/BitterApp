@@ -9,8 +9,8 @@ import SidePost from '../functions/sidePosts'
 
 
 const LoggedInView = () => {
-    const showPost = (post) => {
-        console.log(post)
+    const showPosts = (post) => {
+        debugger
     }
 
 
@@ -25,7 +25,7 @@ const LoggedInView = () => {
            
              <div className = 'comp2'>
                 <Route path ="/loggedin/tweet">
-                    <Tweet showPost = {showPost}/>
+                    <Tweet showPost = {showPosts}/>
                 </Route>
 
                     <Route path ="/loggedin/Profile">
@@ -48,7 +48,8 @@ const LoggedInView = () => {
                     </Route>
 
                     <Route path ="/loggedin/tweet">
-                        <SidePost/>
+                        {/* <SidePost/> */}
+                        <Explore/>
                     </Route>
                     
                 </div>

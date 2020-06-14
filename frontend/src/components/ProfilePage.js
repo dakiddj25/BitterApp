@@ -20,7 +20,7 @@ const ProfilePage = () => {
         try {
             let res = await axios({
                 method: "post",
-                url:`${API}/posts/`,
+                url:`${API}/posts`,
                 headers: {
                     "AuthToken": token
                 },

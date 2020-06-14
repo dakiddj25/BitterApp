@@ -5,11 +5,10 @@ import { apiURL} from '../util/apiURL'
 import Feedindex from '../functions/Feedindex'
 
 
-const Explore =()=>{
+const Explore =({search})=>{
     // it should be fecthing the data from the explore hashtags
     const [posts, setPosts ] = useState([])
-    // let hashtagString = "summer";
-
+   
     const handleString = (str) => {
         // hashtagString = str;
         fetchPosts(str)
@@ -41,7 +40,10 @@ const Explore =()=>{
         fetchPosts();
     },[])
 
-
+    if(search !== ""){
+        fetchPosts(search)
+    }
+ 
 
     return(
         <div className = 'explorePage' >
