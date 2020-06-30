@@ -70,14 +70,14 @@ const fetchPosts = async () => {
 
 
     const showPost = (post) =>{
-        debugger
+        showPosts(post)
     }
 
     return(
         <div>
             <CreatePost handlePostSubmit= {handlePostSubmit} />
             <div>
-           <Feedindex posts={posts}  showPost={showPost} handlePostSubmit= {handlePostSubmit}/>
+           <Feedindex posts={posts}  showPost={showPost}/>
             </div>
          </div>
     )

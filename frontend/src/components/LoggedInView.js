@@ -1,16 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Route } from 'react-router-dom'
+import { apiURL} from '../util/apiURL'
 import SideNav from '../functions/sideNav'
 import Tweet from '../components/TweetPage'
 import ProfilePage from '../components/ProfilePage'
 import Explore from '../components/explore'
-import '../css/mains.css'
+import axios from "axios";
 import SidePost from '../functions/sidePosts'
+import '../css/mains.css'
 
 
 const LoggedInView = () => {
-    const showPosts = (post) => {
-        debugger
+    const [post, setPosts] = useState("")
+
+    const showPosts = async(post) => {
+        setPosts(post)
     }
 
 
@@ -25,7 +29,7 @@ const LoggedInView = () => {
            
              <div className = 'comp2'>
                 <Route path ="/loggedin/tweet">
-                    <Tweet showPost = {showPosts}/>
+                    <Tweet showPosts = {showPosts}/>
                 </Route>
 
                     <Route path ="/loggedin/Profile">
@@ -48,8 +52,8 @@ const LoggedInView = () => {
                     </Route>
 
                     <Route path ="/loggedin/tweet">
-                        {/* <SidePost/> */}
-                        <Explore/>
+                        <SidePost post = {post} />
+                        {/* <Explore/> */}
                     </Route>
                     
                 </div>
