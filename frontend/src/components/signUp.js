@@ -84,7 +84,7 @@ import axios from 'axios'
             <input required id = 'password' placeholder = 'Password' type = "password"  value = {password} onChange = {(e) => {
                 setPassword(e.currentTarget.value)}} />
 
-            <input id='userPic' type="file" onChange={uploadPicture} accept="image/png, image/jpeg"/>
+Profile Picture: <input id='userPic' type="file" onChange={uploadPicture} accept="image/png, image/jpeg"/> 
             
 
             <button>signUp</button>

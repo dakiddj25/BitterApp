@@ -40,9 +40,9 @@ const Explore =({search})=>{
         fetchPosts();
     },[])
 
-    if(search !== ""){
-        fetchPosts(search)
-    }
+    // if(search !== ""){
+    //     fetchPosts(search)
+    // }
  
 
     return(

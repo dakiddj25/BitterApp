@@ -12,7 +12,7 @@ const ProfilePage = () => {
     const { token } = useContext(AuthContext);
     const [posts, setPosts] = useState([]);
     const API = apiURL();
-    const user_id= localStorage.getItem("currentUserID")
+    const user_id = localStorage.getItem("currentUserID")
     
   
     const handlePostSubmit = async (e,tweet) => {

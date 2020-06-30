@@ -12,6 +12,7 @@ const [search, setSearch] = useState("")
   const handleSearch = (e,searching) => {
     e.preventDefault()
     setSearch(searching)
+    // setSearch("")
   }
   
  
