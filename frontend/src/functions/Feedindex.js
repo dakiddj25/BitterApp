@@ -25,10 +25,7 @@ export default function FeedIndex({posts, showPost}){
                                     <h2>{post.username}</h2>
                             
                             <p>{post.tweet}</p>
-                            <div className = 'likeCommentRepost'>
-                                <p> <FaHeart icon = 'FaHeart' color =" yellow"/></p> 
-                                <p> <GiDrippingHoney icon = 'GiDrippingHoney'/></p>
-                            </div>             
+                                     
                                 </div>
                         </div>
                     {/* return <li className = 'tweet' key= {user.postid}> {user.tweet}</li> */}

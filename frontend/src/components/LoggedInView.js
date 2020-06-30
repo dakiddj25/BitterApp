@@ -10,11 +10,22 @@ import SidePost from '../functions/sidePosts'
 import '../css/mains.css'
 
 
+
 const LoggedInView = () => {
     const [post, setPosts] = useState("")
+    const [comments, setComments] = useState([])
+    const API = apiURL();
+    
 
     const showPosts = async(post) => {
-        setPosts(post)
+        try{
+            let res = await axios.get(`${API}/comments/${post.postid}`)
+            setComments(res.data.payload)
+            setPosts(post)
+            debugger
+      } catch (err){
+          console.log(err)
+     }
     }
 
 
@@ -52,7 +63,7 @@ const LoggedInView = () => {
                     </Route>
 
                     <Route path ="/loggedin/tweet">
-                        <SidePost post = {post} />
+                        <SidePost post = {post} comments = {comments} />
                         {/* <Explore/> */}
                     </Route>
                     
