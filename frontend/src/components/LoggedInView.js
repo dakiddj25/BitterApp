@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useContext,useEffect } from 'react'
+import { AuthContext } from '../provider/AuthContext'
 import { Route } from 'react-router-dom'
 import { apiURL} from '../util/apiURL'
 import SideNav from '../functions/sideNav'
@@ -15,6 +16,8 @@ const LoggedInView = () => {
     const [post, setPosts] = useState("")
     const [comments, setComments] = useState([])
     const API = apiURL();
+    const { token } = useContext(AuthContext);
+    const user_id = localStorage.getItem("currentUserID")
     
 
     const showPosts = async(post) => {
@@ -29,6 +32,32 @@ const LoggedInView = () => {
     }
 
 
+    const handleCommentSubmit = async (e,comment) => {
+        e.preventDefault()
+        try {
+            let res = await axios({
+                method: "post",
+                url:`${API}/comments`,
+                headers: {
+                    "AuthToken": token
+                },
+                data: {
+                    post_id: post.postid,
+                    user_id: user_id,
+                    comment: comment,
+                } 
+            })
+           
+            showPosts()
+        
+        }catch(err){
+            console.log(err)
+        }
+    }
+
+    useEffect(() => {
+        showPosts();
+    },[])
    
     return (
         <div className = 'warper'>
@@ -63,7 +92,7 @@ const LoggedInView = () => {
                     </Route>
 
                     <Route path ="/loggedin/tweet">
-                        <SidePost post = {post} comments = {comments} />
+                        <SidePost post = {post} comments = {comments} handleCommentSubmit ={handleCommentSubmit}/>
                         {/* <Explore/> */}
                     </Route>
                     

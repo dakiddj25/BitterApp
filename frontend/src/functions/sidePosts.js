@@ -3,13 +3,25 @@ import axios from 'axios'
 import { apiURL } from '../util/apiURL'
 import { GiDrippingHoney } from 'react-icons/gi';
 import { FaHeart } from 'react-icons/fa';
+import CreateComment from "./createComment";
 
 
-export default function SidePost({post, comments}){
+export default function SidePost({post, comments, handleCommentSubmit}){
         let title = "Click on a post to see it's comments"
-    // Need to now write query for likes and comments!! to be able to get all comments and to get number value for likes
-   
-    
+        const [makeComment, setMakeComment] = useState(false);
+        if(post === ''){
+            post = {
+                user_pic : "https://thumbs.dreamstime.com/b/profile-picture-vector-perfect-social-media-other-web-use-125320944.jpg",
+                username : "Select a post to view it's comments",
+                tweet : "Press the honey comb to add a comment"
+            }
+        }
+        
+
+    const handleComment =(e,comment)=>{
+        handleCommentSubmit(e,comment)
+    }
+
     return (
         <>
             <h1>{title}</h1>
@@ -26,10 +38,12 @@ export default function SidePost({post, comments}){
                 <p>{post.tweet}</p>
                 <div className = 'likeCommentRepost'>
                     <p> <FaHeart icon = 'FaHeart' color =" yellow"/></p> 
-                    <p> <GiDrippingHoney icon = 'GiDrippingHoney'/></p>
+                    <p onClick ={()=> setMakeComment(!makeComment)}> <GiDrippingHoney icon = 'GiDrippingHoney'/></p>
                 </div>             
                     </div>
             </div>
+
+           {makeComment? <CreateComment handleComment = {handleComment}/>: null}
 
             <div className = "comments">
                     {comments.map(comment => {
