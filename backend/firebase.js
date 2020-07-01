@@ -18,3 +18,5 @@ admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://fir-auth-bitter.firebaseio.com"
   });
+
+module.exports = admin;

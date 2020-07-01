@@ -1,6 +1,6 @@
 const users = require("express").Router();
 const { getSingleUser ,logIn, createUser, editUser, deleteUser, getUserByEmail } = require("../queries/users");
-// const { checkFirebaseToken } = require('../middleware/auth')
+
 
 users.get("/:id", getSingleUser);
 

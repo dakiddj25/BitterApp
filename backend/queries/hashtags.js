@@ -4,7 +4,7 @@ const db = require('../db/index')
 const getHashtagByHashtag = async (req, res, next) => {
     try {
         let hashtagId = req.body.hashtag
-        console.log(hashtagId);
+        // console.log(hashtagId);
         let hashtag = await db.any(`SELECT * FROM hashtags JOIN posts ON hashtags.post_id = posts.id LEFT JOIN users ON posts.user_id = users.id WHERE hashtag LIKE '%${hashtagId}%' ORDER BY posts.id DESC`);
         res.status(200).json({
             status: "success",

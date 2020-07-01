@@ -29,36 +29,36 @@ tweet VARCHAR(280)
 
 CREATE TABLE likes(
 id SERIAL PRIMARY KEY,
-post_id INT REFERENCES posts(id),
+post_id INT REFERENCES posts(id) ON DELETE SET NULL,
 user_id INT REFERENCES users(id)
 );
 
 CREATE TABLE comments(
 id SERIAL PRIMARY KEY,
-post_id INT REFERENCES posts(id),
+post_id INT REFERENCES posts(id) ON DELETE SET NULL,
 user_id INT REFERENCES users(id),
 comment VARCHAR
 );
 
 CREATE TABLE hashtags(
 id SERIAL PRIMARY KEY,
-post_id INT REFERENCES posts(id),
+post_id INT REFERENCES posts(id) ON DELETE SET NULL,
 hashtag VARCHAR
 );
 
 INSERT INTO users( firstName, lastName, userName, password,  email, user_pic)
-VALUES( 'Johnanthan', 'james', 'whoinja', 'pursuit','whoinja9@pursuit.org', 'https://vignette.wikia.nocookie.net/jimmyneutron/images/5/57/Jimmy_Neutron.png/revision/latest?cb=20180219044703'),
+VALUES( 'Johnanthan', 'james', 'whoinja', 'pursuit','whoinja9@pursuit.org', 'https://s.abcnews.com/images/Entertainment/WireAP_91d6741d1954459f9993bd7a2f62b6bb_16x9_992.jpg'),
     ( 'Jay', 'Jones', 'jones123', '1234','jones12@pursuit.org', 'https://cdn.newsapi.com.au/image/v1/8a4d4a44df4a7069781a6583461bcb1d'),
     ( 'Krystal', 'Corey', 'Cry123', '1234','cry12@pursuit.org', 'https://wikibio.in/wp-content/uploads/2020/04/Haley-Cureton.jpg'),
     ( 'Sammy', 'Jo', 'Jojo', '1234','jo12@pursuit.org', ' https://pmctvline2.files.wordpress.com/2020/04/too-hot-to-handle-francesca-2.jpg?w=620'),
-    ( 'Jeremy', 'Bond', 'Jayjay', '1234','jdasasd12@pursuit.org', 'https://files.slack.com/files-pri/TCVA3PF24-F010341R4A3/20190204_195323.jpg'),
-    ( 'Ben', 'Carson', 'benji', '1234','benny@pursuit.org', 'https://steamuserimages-a.akamaihd.net/ugc/494654052800262970/8F0E2FA5EB82B5D30E1C568B7524A9FECAC020A6/');
+    ( 'Jeremy', 'Bond', 'Jayjay', '1234','jdasasd12@pursuit.org', 'https://www.aceshowbiz.com/images/photo/drake.jpg'),
+    ( 'Ben', 'Carson', 'benji', '1234','benny@pursuit.org', 'https://blogs.forbes.com/zackomalleygreenburg/files/2017/06/0606_celeb-the-weekend-4_1200x675-1200x675.jpg');
 
 INSERT INTO posts(user_id, tweet)
 VALUES (1, 'Kids don’t ever play outside no more than 10 min talking about it’s too hot . We use to be outside all day my mom didn’t play that! Get out her house (Face with tears of joy)'),
-        (1, 'I be saying “don’t worry I’m Gucci” when in fact I am T.J Maxx'),
-        (1, 'just paid rent during a global pandemic I’m 100% a B%6$h'),
-        (1, 'king of wealth redistribution pic.twitter.com/oqMOWPUyVg'),
+        (1, 'Is Insta cart really a thing?'),
+        (1, 'just paid rent during a global pandemic Wow this is crazy'),
+        (1, 'king of wealth redistribution Check out this link pic.twitter.com/oqMOWPUyVg'),
         (1, 'It feels like the richer that people get, the harder it is for them to remember that food costs money, actually.'),
          
          (2, 'just paid rent during a global pandemic crazy'),
@@ -66,20 +66,20 @@ VALUES (1, 'Kids don’t ever play outside no more than 10 min talking about it�
         (2, 'WHYYYYYY ME LORDTT'),
         
          (3, 'Im really just trying to slide into some DMs'),
-        (3, 'king of wealth redistribution pic.twitter.com/oqMOWPUyVg'),
+        (3, 'king of wealth Huh?'),
         (3, 'Money Anit a thing but a chicken wing'),
         
-         (4, 'THis Virus is really killing my VIBE'),
-        (4, 'Money anit a thing but a chicken wing!'),
-        (4, 'Big Money Dont Act Funny!!! You The Vibe WHen we come outside'),
+         (4, 'This Virus is really killing my VIBE'),
+        (4, 'What shoule i watch on netflix'),
+        (4, 'Big Money Dont Act Funny!!! '),
         
          (5, 'Whats the best way to approach someone after this?'),
-        (5, 'read the room, Forbes https://twitter.com/Forbes/status/1247520987802787840 …'),
+        (5, 'read the room, Forbes Mag Thats me'),
         (5, 'I mean, if we’re going to be stuck inside for a lot longer, it might be a good investment?'),
 
         (6, 'Remind me to hire this wise cat to do my taxes next year.'),
-        (6, 'How i ratted and still came home to a big bag!!'),
-        (6, 'Trigger fingers turn to twitter fingers! Whoever likes this posts gives $1000!!');
+        (6, 'Who has had the biggest comeback this year?'),
+        (6, 'Money, Money Money!!!!!! Whoever likes this posts gives $1000!!');
 
 INSERT INTO likes (post_id, user_id)
 VALUES  (1,2),
@@ -98,14 +98,14 @@ VALUES  (1,2, 'What are you talking about?'),
         (5,6, 'Why are you even on twitter?');
 
 INSERT INTO hashtags(post_id, hashtag)
-VALUES( 1, '#summer19'),
-( 2, '#nocorona'),
-( 3, '#summertimefine'),
+VALUES( 1, '#summer'),
+( 2, '#summer'),
+( 3, '#summer'),
 ( 4, '#loveyourself'),
-( 5, '#explore'),
-( 6, '#explore'),
-( 9, '#explore'),
-( 10, '#explore'),
+( 5, '#loveyourself'),
+( 6, '#loveyourself'),
+( 9, '#covid'),
+( 10, '#covid'),
 ( 11, '#explore'),
 ( 16, '#explore'),
 ( 18, '#explore'),

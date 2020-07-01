@@ -21,10 +21,18 @@ API key:
 
 
 Things to ask Corey:
-Heroku is not working for some reason
-The AuthRoutes do not seem to be working
-How can I make only the middle componet change on the tweet page
-For the Explore page should i create an new table to hold explore post or should i add a new categorie on my post table, and name it categories and have the explore table post be a qurey that search by that category
+-Heroku is not working for some reason
+-The AuthRoutes do not seem to be working
+-How can I make only the middle componet change on the tweet page
+-For the Explore page should i create an new table to hold explore post or should i -add a new categorie on my post table, and name it categories and have the explore -table post be a qurey that search by that category
+How to make backend auth
+sign up not working 
+uplift state
+3rd component for comments and likes
+Hosting 
+stying 
+
+
 
 
 I figured out my Explore table situation!
