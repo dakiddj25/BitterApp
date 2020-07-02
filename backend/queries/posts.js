@@ -37,7 +37,7 @@ const getUsersPosts = async (req, res, next) => {
 const deletePost = async (req, res, next) => {
     try {
         let postId = req.params.id;
-        let post = ("DELETE FROM posts WHERE id=$1 RETURNING *", postId)
+        let post = db.one("DELETE FROM posts WHERE id=$1 RETURNING *", postId)
         console.log(postId)
         res.status(200).json({
             status: "success",

@@ -5,8 +5,7 @@ import { GiDrippingHoney } from 'react-icons/gi';
 // import { AuthContext } from '../provider/AuthContext'
 
 export default function UserIndex({posts}){
-//   debugger
-  let num = 0;
+    const [likes, setLikes] = useState(false)
 
     return (
         <>
@@ -23,12 +22,13 @@ export default function UserIndex({posts}){
                                 <div className = 'lower-container'>
                                     <h2>{user.username}</h2>
                                     <p>{user.tweet}</p>
-                                        <div className = 'likeCommentRepost'>
-                                           <p>{num} <FaHeart icon = 'FaHeart' /></p> 
-                                          <p> <GiDrippingHoney icon = 'GiDrippingHoney'/></p>
-                                          <p> <FaCommentAlt icon = 'FaCommentAlt'/></p>
-                                        </div>
+                                       
                                 </div>
+
+                                <div className = 'likeCommentRepost'>
+                                           <p onClick= {()=> setLikes(!likes)}> {likes? <FaHeart icon = 'FaHeart' color= 'yellow' /> : <FaHeart icon = 'FaHeart' />} </p> 
+                                          <p> <GiDrippingHoney icon = 'GiDrippingHoney'/></p>
+                                        </div>
                         </div>
                     )
                 })}

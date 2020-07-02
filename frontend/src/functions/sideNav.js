@@ -14,7 +14,7 @@ const TweetNav = () => {
     <div className="sidenav">
         <img src= 'https://dejpknyizje2n.cloudfront.net/marketplace/products/geometric-bee-logo-sticker-1561735738.2410054.png' />
         <Link to= '/loggedin/tweet'> {<FaHome icon = 'FaHome'/> }HOME</Link>
-        <Link to= '/loggedin/Explore'>{<FaIcons icon = 'FaIcons'/> }EXPLORE</Link>
+        {/* <Link to= '/loggedin/Explore'>{<FaIcons icon = 'FaIcons'/> }EXPLORE</Link> */}
         <Link to= '/loggedin/Profile'>{<FaMale icon = 'FaMale'/> }PROFILE</Link>
         <a href="#LOGOUT" onClick = {logout} >{<FaEject icon = 'FaEject'/>}LOGOUT</a>
         

@@ -13,7 +13,7 @@ import '../css/mains.css'
 
 
 const LoggedInView = () => {
-    const [post, setPosts] = useState("")
+    const [post, setPost] = useState({})
     const [comments, setComments] = useState([])
     const API = apiURL();
     const { token } = useContext(AuthContext);
@@ -24,7 +24,7 @@ const LoggedInView = () => {
         try{
             let res = await axios.get(`${API}/comments/${post.postid}`)
             setComments(res.data.payload)
-            setPosts(post)
+            setPost(post)
             debugger
       } catch (err){
           console.log(err)
@@ -32,8 +32,7 @@ const LoggedInView = () => {
     }
 
 
-    const handleCommentSubmit = async (e,comment) => {
-        e.preventDefault()
+    const handleCommentSubmit = async (comment) => {
         try {
             let res = await axios({
                 method: "post",
@@ -48,7 +47,7 @@ const LoggedInView = () => {
                 } 
             })
            
-            showPosts()
+            showPosts(post);
         
         }catch(err){
             console.log(err)
@@ -86,9 +85,9 @@ const LoggedInView = () => {
 
                 <div className = 'comp3'>
                     <Route path ="/loggedin/Profile">
-                        <div className = 'explore'>
+                        
                             <Explore/>
-                        </div>
+                        
                     </Route>
 
                     <Route path ="/loggedin/tweet">

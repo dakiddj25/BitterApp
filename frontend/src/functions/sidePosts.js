@@ -9,7 +9,7 @@ import CreateComment from "./createComment";
 export default function SidePost({post, comments, handleCommentSubmit}){
         let title = "Click on a post to see it's comments"
         const [makeComment, setMakeComment] = useState(false);
-        if(post === ''){
+        if(!post.user_pic){
             post = {
                 user_pic : "https://thumbs.dreamstime.com/b/profile-picture-vector-perfect-social-media-other-web-use-125320944.jpg",
                 username : "Select a post to view it's comments",
@@ -26,24 +26,23 @@ export default function SidePost({post, comments, handleCommentSubmit}){
         <>
             <h1>{title}</h1>
             <div key = {post.postid} className = 'card-container'>
-                    <div className = 'upper-container'>
-                        <div className = 'image-container'>
-                            <img src = {post.user_pic}/>
-                        </div>
+                <div className = 'upper-container'>
+                    <div className = 'image-container'>
+                        <img src = {post.user_pic}/>
                     </div>
+                </div>
 
-                    <div className = 'lower-container'>
-                        <h2>{post.username}</h2>
-                
-                <p>{post.tweet}</p>
+                <div className = 'lower-container'>
+                    <h2>{post.username}</h2>
+                    <p>{post.tweet}</p>  
+                </div>
                 <div className = 'likeCommentRepost'>
-                    <p> <FaHeart icon = 'FaHeart' color =" yellow"/></p> 
+                    <p> <FaHeart icon = 'FaHeart' /></p> 
                     <p onClick ={()=> setMakeComment(!makeComment)}> <GiDrippingHoney icon = 'GiDrippingHoney'/></p>
-                </div>             
-                    </div>
+                </div> 
             </div>
 
-           {makeComment? <CreateComment handleComment = {handleComment}/>: null}
+           {makeComment? <CreateComment handleComment = {handleComment} setMakeComment = {setMakeComment}/>: null}
 
             <div className = "comments">
                     {comments.map(comment => {
