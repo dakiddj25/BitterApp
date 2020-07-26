@@ -14,10 +14,10 @@ export default function FeedIndex({posts, showPost}){
                 {posts.map(post => {
                     {/* debugger */}
 
-                   return <div key = {post.postid} className = 'card-container'>
+                   return <div onClick = {() => {showPost(post)}} key = {post.postid} className = 'card-container'>
                                 <div className = 'upper-container'>
                                     <div className = 'image-container'>
-                                        <img onClick = {() => {showPost(post)}} src = {post.user_pic}/>
+                                        <img src = {post.user_pic}/>
                                     </div>
                                 </div>
 

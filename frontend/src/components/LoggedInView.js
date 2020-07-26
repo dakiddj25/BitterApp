@@ -98,7 +98,7 @@ const LoggedInView = () => {
                 </div>
 
 
-             </div>
+        </div>
         
 
         
