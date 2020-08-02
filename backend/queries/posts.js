@@ -41,7 +41,7 @@ const deletePost = async (req, res, next) => {
         console.log(postId)
         res.status(200).json({
             status: "success",
-            message: "Deleted users posts",
+            message: "Deleted user posts",
             payload: post
         })
     } catch (err){

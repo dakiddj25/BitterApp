@@ -10,6 +10,7 @@ const getSingleUser = async (req, res, next) => {
             status: "success",
             message: "single user",
             payload: user
+            
         })
     } catch (err){
         res.status(400).json({

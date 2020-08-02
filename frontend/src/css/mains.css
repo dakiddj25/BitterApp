@@ -33,6 +33,7 @@
   max-width: 468px;
   flex-wrap: wrap;
 }
+
 .upper-container{
 	height: auto;
 	background: rgb(248,213,62);
@@ -49,7 +50,8 @@
 .image-container img{
 	width: 80px;
 	height: 80px;
-	border-radius: 50%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .lower-container{
   display: flex;
@@ -94,6 +96,8 @@
     text-align: left;
   }
 }
+
+
 
 .comp2{
   height: 100vh;

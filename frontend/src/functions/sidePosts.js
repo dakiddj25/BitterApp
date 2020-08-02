@@ -37,8 +37,7 @@ export default function SidePost({post, comments, handleCommentSubmit}){
                     <p>{post.tweet}</p>  
                 </div>
                 <div className = 'likeCommentRepost'>
-                    <p> <FaHeart icon = 'FaHeart' /></p> 
-                    <p onClick ={()=> setMakeComment(!makeComment)}> <GiDrippingHoney icon = 'GiDrippingHoney'/></p>
+                        <p onClick ={()=> setMakeComment(!makeComment)}> <GiDrippingHoney icon = 'GiDrippingHoney'/></p>
                 </div> 
             </div>
 
