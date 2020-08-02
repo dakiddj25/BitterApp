@@ -20,7 +20,7 @@ a:hover{
 }
 
 .logo{
-    height: 25px;
+    height: 55px;
   }
 
   .exploreNav {
@@ -88,6 +88,10 @@ a:hover{
   color: rgb(10, 92, 143);
 }
 
+input{
+  /* margin-top: 5px; */
+  height: 30px;
+}
 /* .sidenav .active {
   color: rgb(78, 23, 23);
   background-color: rgb(91, 93, 93);

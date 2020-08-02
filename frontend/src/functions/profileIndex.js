@@ -33,6 +33,7 @@ export default function UserIndex({posts}){
                                     <div className = 'image-container'>
                                         <img src = {user.user_pic}/>                                   
                                     </div>
+                                    {/* <div className="username">{user.username}</div>/ */}
                                 </div>
 
                                 <div className = 'lower-container'>
@@ -44,7 +45,9 @@ export default function UserIndex({posts}){
                                 <div className = 'likeCommentRepost'>
                                            <p onClick= {()=> setLikes(!likes)}> {likes? <FaHeart icon = 'FaHeart' color= 'yellow' /> : <FaHeart icon = 'FaHeart' />} </p> 
                                           <p> <GiDrippingHoney icon = 'GiDrippingHoney'/></p>
-                                        </div>
+                                </div>
+
+                                {/* <div className='last-contaner'> X</div> */}
                         </div>
                     )
                 })}

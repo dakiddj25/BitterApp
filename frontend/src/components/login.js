@@ -27,6 +27,7 @@ import { AuthContext } from '../provider/AuthContext'
 
         }
         catch (err){
+            alert(err)
             console.log(err)
         }
     }

@@ -37,6 +37,7 @@ import axios from 'axios'
 
         }
         catch (err){
+            alert(err)
             console.log(err)
         }
     }

@@ -47,6 +47,11 @@
   margin-right: 5px;
 	/* transform: translate(100px,100px); */
 }
+
+.username{
+  text-align: center;
+}
+
 .image-container img{
 	width: 80px;
 	height: 80px;
