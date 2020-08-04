@@ -8,14 +8,15 @@ import { apiURL} from '../util/apiURL'
 
 // import { AuthContext } from '../provider/AuthContext'
 
-export default function UserIndex({posts}){
+export default function UserIndex({posts, fetchPosts}){
     const [likes, setLikes] = useState(false)
     const API = apiURL();
 
-    const deleteComment = async(post) => {
+    const deletePost = async(post) => {
         try{
             console.log(post)
-            let res = await axios.delete(`${API}/posts/${post}`)
+            let res = await axios.delete(`${API}/posts/${post}`);
+            fetchPosts()
             debugger
       } catch (err){
           console.log(err)
@@ -28,7 +29,7 @@ export default function UserIndex({posts}){
                 {posts.map(user => {
                     return (
                         <div key = {user.postid} className = 'card-container'>
-                            <p> <FaWindowClose onClick = {() => {deleteComment(user.postid)}} icon = 'FaWindowClose'/></p>
+                            <p className='deletepost'> <FaWindowClose onClick = {() => {deletePost(user.postid)}} icon = 'FaWindowClose'/></p>
                                 <div className = 'upper-container'>
                                     <div className = 'image-container'>
                                         <img src = {user.user_pic}/>                                   
@@ -38,16 +39,11 @@ export default function UserIndex({posts}){
 
                                 <div className = 'lower-container'>
                                     <h2>{user.username}</h2>
+
+                                  
                                     <p>{user.tweet}</p>
                                        
                                 </div>
-
-                                <div className = 'likeCommentRepost'>
-                                           <p onClick= {()=> setLikes(!likes)}> {likes? <FaHeart icon = 'FaHeart' color= 'yellow' /> : <FaHeart icon = 'FaHeart' />} </p> 
-                                          <p> <GiDrippingHoney icon = 'GiDrippingHoney'/></p>
-                                </div>
-
-                                {/* <div className='last-contaner'> X</div> */}
                         </div>
                     )
                 })}

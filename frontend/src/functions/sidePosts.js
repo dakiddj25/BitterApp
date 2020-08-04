@@ -35,10 +35,10 @@ export default function SidePost({post, comments, handleCommentSubmit}){
                 <div className = 'lower-container'>
                     <h2>{post.username}</h2>
                     <p>{post.tweet}</p>  
+                        <div className = 'likeCommentRepost'>
+                                <p onClick ={()=> setMakeComment(!makeComment)}> <GiDrippingHoney icon = 'GiDrippingHoney'/></p>
+                        </div> 
                 </div>
-                <div className = 'likeCommentRepost'>
-                        <p onClick ={()=> setMakeComment(!makeComment)}> <GiDrippingHoney icon = 'GiDrippingHoney'/></p>
-                </div> 
             </div>
 
            {makeComment? <CreateComment handleComment = {handleComment} setMakeComment = {setMakeComment}/>: null}
