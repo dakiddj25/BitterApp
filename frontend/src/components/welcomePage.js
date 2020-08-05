@@ -10,8 +10,9 @@ const WelcomePage = () => {
 const [search, setSearch] = useState("")
 
   const handleSearch = (e,searching) => {
-    e.preventDefault()
-    setSearch(searching)
+    e.preventDefault();
+    debugger
+    setSearch(searching);
     // setSearch("")
   }
   

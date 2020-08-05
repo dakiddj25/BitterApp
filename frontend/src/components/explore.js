@@ -7,8 +7,8 @@ import Feedindex from '../functions/Feedindex'
 
 const Explore =({search})=>{
     // it should be fecthing the data from the explore hashtags
-    const [posts, setPosts ] = useState([])
-   
+    const [posts, setPosts ] = useState([]);
+
     const handleString = (str) => {
         // hashtagString = str;
         fetchPosts(str)
@@ -40,9 +40,9 @@ const Explore =({search})=>{
         fetchPosts();
     },[])
 
-    // if(search !== ""){
-    //     fetchPosts(search)
-    // }
+    if(search !== ""){
+        fetchPosts(search)
+    }
  
 
     return(

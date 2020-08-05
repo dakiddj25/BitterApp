@@ -31,6 +31,7 @@
   margin: 10px 5px;
   /* padding: 0 16px 16px 16px; */
   max-width: 468px;
+  background-color: white;
   
 }
 
@@ -103,11 +104,11 @@
   text-align: center;
 }
 
-.deletepost{
+/* .deletepost{
   position: fixed;
  right: 700px;
  font-size: 15px;
-}
+} */
 
 
 
@@ -125,7 +126,8 @@
 .comp2{
   height: 100vh;
   overflow: scroll;
-  border: black;
+  border-style: none double none none;
+  border-color: hsl(0, 0%, 73%);
 }
 
 .comp3{

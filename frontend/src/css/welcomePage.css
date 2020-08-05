@@ -4,15 +4,14 @@ body{
     text-align: center;
     justify-content: center;
     justify-content: space-evenly;
-   
+     background-color: white;
 } 
 .welcomeExplore{
     width: 40%;
 }
 
-.explorePage{
-   
-
+.signUp{
+   background-color: white;
 }
 
 .explore {
