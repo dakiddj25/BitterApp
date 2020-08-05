@@ -16,10 +16,9 @@ export default function UserIndex({posts, fetchPosts}){
         try{
             console.log(post)
             let res = await axios.delete(`${API}/posts/${post}`);
-            fetchPosts()
-            debugger
+            fetchPosts();
       } catch (err){
-          console.log(err)
+          console.log(err);
      }
     }
 
@@ -29,14 +28,14 @@ export default function UserIndex({posts, fetchPosts}){
                 {posts.map(user => {
                     return (
                         <div key = {user.postid} className = 'card-container'>
-                            <p className='deletepost'> <FaWindowClose onClick = {() => {deletePost(user.postid)}} icon = 'FaWindowClose'/></p>
+                           
                                 <div className = 'upper-container'>
                                     <div className = 'image-container'>
                                         <img src = {user.user_pic}/>                                   
                                     </div>
                                     {/* <div className="username">{user.username}</div>/ */}
                                 </div>
-
+                                        <p className='deletepost'> <FaWindowClose onClick = {() => {deletePost(user.postid)}} icon = 'FaWindowClose'/></p>
                                 <div className = 'lower-container'>
                                     <h2>{user.username}</h2>
 

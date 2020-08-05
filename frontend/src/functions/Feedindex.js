@@ -8,17 +8,18 @@ import axios from 'axios'
 
 
 
-export default function FeedIndex({posts, showPost}){
+export default function FeedIndex({posts, showPost,  fetchPosts}){
     const user_id = localStorage.getItem("currentUserID");
     const API = apiURL();
 
     const deleteComment = async(post) => {
         try{
             console.log(post)
-            let res = await axios.delete(`${API}/posts/${post}`)
-            debugger
+            let res = await axios.delete(`${API}/posts/${post}`);
+            fetchPosts();
       } catch (err){
           console.log(err)
+          
      }
     }
 
@@ -30,7 +31,7 @@ export default function FeedIndex({posts, showPost}){
                     {/* debugger */}
                     
                    return <div onClick = {() => {showPost(post)}} key = {post.postid} className = 'card-container'>
-                                    {Number(user_id) === post.usersid? <p> <FaWindowClose onClick = {() => {deleteComment(post.postid)}} icon = 'FaWindowClose'/></p>: null}
+                                    {Number(user_id) === post.usersid? <p className='deletepost'> <FaWindowClose onClick = {() => {deleteComment(post.postid)}} icon = 'FaWindowClose'/></p>: null}
                                 <div className = 'upper-container'>
                                     <div className = 'image-container'>
                                         <img src = {post.user_pic}/>

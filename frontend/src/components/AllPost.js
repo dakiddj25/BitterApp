@@ -77,7 +77,7 @@ const fetchPosts = async () => {
         <div>
             <CreatePost handlePostSubmit= {handlePostSubmit} />
             <div>
-           <Feedindex posts={posts}  showPost={showPost}/>
+           <Feedindex posts={posts}  showPost={showPost}  fetchPosts={fetchPosts()}/>
             </div>
          </div>
     )

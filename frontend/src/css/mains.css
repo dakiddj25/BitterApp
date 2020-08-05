@@ -105,8 +105,8 @@
 
 .deletepost{
   position: fixed;
-  background-color: #01a9ac;
-  color: #01a9ac;
+ right: 700px;
+ font-size: 15px;
 }
 
 
@@ -125,6 +125,7 @@
 .comp2{
   height: 100vh;
   overflow: scroll;
+  border: black;
 }
 
 .comp3{
